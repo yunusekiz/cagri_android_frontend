@@ -94,11 +94,7 @@
       
 
 
-<div class="btn-toolbar">
-    <button class="btn btn-primary">New User</button>
-    <button class="btn">Import</button>
-    <button class="btn">Export</button>
-</div>
+
 <div class="well">
     <table class="table">
       <thead>

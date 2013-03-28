@@ -32,5 +32,14 @@ class home extends CI_Controller {
 		$this->session_data_array = $this->session->all_userdata();
 		return $this->session_data_array;	
 	}
+
+	public function logout()
+	{
+		$this->load->library('session');
+		$this->session->sess_destroy();
+		echo "<meta http-equiv=\"refresh\" content=\"0; url=../../loginpage\">";
+
+		}
+
 	
 }

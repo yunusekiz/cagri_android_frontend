@@ -51,9 +51,12 @@
         <input type="text" class="input-block-level" placeholder="Email address">
         <input type="password" class="input-block-level" placeholder="Password">
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
+        <a href="#">Forgot Password?</a>
       </form>
 
     </div> <!-- /container -->
+
+    
     
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 

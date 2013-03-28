@@ -152,8 +152,8 @@ class student extends CI_Controller {
 		   				{
 		   						$message = 'Operation success';
 		   						echo $message;
-		   						echo "<meta http-equiv=\"refresh\" content=\"0; url=../student/editForm/$student_id\">";
-		   					}
+								echo "<meta http-equiv=\"refresh\" content=\"0; url=allStudents\">";
+			   					}
 
 		   						
 		   					else
@@ -193,6 +193,7 @@ class student extends CI_Controller {
 			
 			// admin panelinin ilgili view lerini yükler
 			$this->parser->parse('student_addition_view',$this->data);
+
 		}		
 	}
 
