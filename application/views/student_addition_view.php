@@ -60,10 +60,10 @@
                             <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="student"><i class="icon-plus"></i> Add Student</a></li>
-                            <li><a href="instructor/addForm"><i class="icon-plus"></i> Add Instructor</a></li>
-                            <li><a href="/help/support"><i class="icon-edit"></i> Edit Student</a></li>
-                            <li><a href="instructor/allInstructors"><i class="icon-edit"></i> Edit Instructor</a></li>
+                            <li><a href="../student/addForm"><i class="icon-plus"></i> Add Student</a></li>
+                            <li><a href="../instructor/addForm"><i class="icon-plus"></i> Add Instructor</a></li>
+                            <li><a href="../student/allStudents"><i class="icon-edit"></i> Edit Student</a></li>
+                            <li><a href="../instructor/allInstructors"><i class="icon-edit"></i> Edit Instructor</a></li>
 
                         </ul>
                     </li>
@@ -181,7 +181,9 @@
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="{base}assets/js/bootstrap-typeahead.min.js" type="text/javascript"></script>
     <script src="{base}assets/js/bootstrap-combobox.js" type="text/javascript"></script>
-        <script src="{base}assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="{base}assets/js/bootstrap-datepicker.js" type="text/javascript"></script>
+    <script src="{base}assets/js/bootstrap.js" type="text/javascript"></script>
+
 
     <script type="text/javascript">
       //<![CDATA[
@@ -270,7 +272,7 @@ $('#toggle-all').click(function() {
                               {
                                 type:"POST",
                                 async: false,
-                                url:"student/add_student",
+                                url:"add_student",
                                 data:$('#form').serialize(),
                                 success:function(msg)
                                 {

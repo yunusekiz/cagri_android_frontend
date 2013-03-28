@@ -87,7 +87,7 @@ class student extends CI_Controller {
 	{
 	$delete_student = $this->student_model->deleteStudent($id);
 
-		if($delete_delete == TRUE) {
+		if($delete_student == TRUE) {
 			echo 'Instructor has been deleted';
 			echo "<meta http-equiv=\"refresh\" content=\"0; url=../../student/allStudents\">";
 			 
@@ -95,6 +95,29 @@ class student extends CI_Controller {
 		else
 			echo 'Deletion failed';
 }
+
+
+	public function update() 
+	{
+				$base = base_url();
+		$this->parser_data = array('base' => $base);
+		
+		$this->load->library('session');// session ın nimetlerinden faydalanabilmek için 'session' isimli library yi yükler.
+		$admin = $this->session->userdata('admin_session'); // $admin diye bi değişken set edilir, değer olarak ise
+															// şu aşamada olup olmadığı bilinmeyen admin_session değişkeni atanır
+		if( empty($admin) ) // eğer $admin değişkenini değeri boş ise, kullanıcı login formuna geri gönderilir
+		{
+			echo "<meta http-equiv=\"refresh\" content=\"0; url=../../loginpage\">";
+		}
+		else
+		{
+			//$this->getSessionData(); // session başlatıldığı andaki değerleri öğrenilmek istendiği zaman getSessionData() metodu çağırılır.
+			//var_dump($this->session_data_array); //
+			
+			// admin panelinin ilgili view lerini yükler
+			$this->parser->parse('edit_user_view',$this->parser_data);
+		}	
+	}
 
 	public function updateStudent()
 	{
@@ -120,16 +143,16 @@ class student extends CI_Controller {
 		   {
 
 		   					
-		   $update = $this->student_model->addStudentRow($student_number, $student_name,
+		   $update = $this->student_model->updateStudent($student_number, $student_name,
 		   	$student_surname,$student_email,$student_birthdate,$student_faculty,
-		   						$student_department,$student_class);
+		   						$student_department,$student_class,$student_id);
 
 
-		   				if($insert == true)
+		   				if($update == true)
 		   				{
 		   						$message = 'Operation success';
 		   						echo $message;
-		   						echo "<meta http-equiv=\"refresh\" content=\"0; url=../student/addForm\">";
+		   						echo "<meta http-equiv=\"refresh\" content=\"0; url=../student/editForm/$student_id\">";
 		   					}
 
 		   						
@@ -184,6 +207,8 @@ class student extends CI_Controller {
 			$this->data['allins'] = $records;
 		}
 
-		$this->parser->parse('all_student_view',$this->parser_data);
+		$this->parser->parse('all_student_view',$this->data);
 
 	}
+
+}

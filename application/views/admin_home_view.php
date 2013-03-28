@@ -35,9 +35,9 @@
                             <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="student"><i class="icon-plus"></i> Add Student</a></li>
+                            <li><a href="student/addForm"><i class="icon-plus"></i> Add Student</a></li>
                             <li><a href="instructor/addForm"><i class="icon-plus"></i> Add Instructor</a></li>
-                            <li><a href="/help/support"><i class="icon-edit"></i> Edit Student</a></li>
+                            <li><a href="student/allStudents"><i class="icon-edit"></i> Edit Student</a></li>
                             <li><a href="instructor/allInstructors"><i class="icon-edit"></i> Edit Instructor</a></li>
 
                         </ul>

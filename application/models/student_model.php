@@ -59,7 +59,7 @@ class student_model extends CI_Model {
 
 	}
 
-	public function getAllStudent($id)
+	public function getAllStudent($id = NULL)
 	{
 		if ($id == NULL) 
 		{
@@ -80,6 +80,35 @@ class student_model extends CI_Model {
 			return $query->result_array();
 		}
 
+	}
+
+	public function updateStudent($snumber,$name,$surname,$email,$birthdate,$faculty,$department,$class,$id) {
+			$update_data = array(
+								'snumber'		=> $snumber,
+								'name'			=> $name,
+								'surname'		=> $surname,
+								'email'			=> $email,
+								'birthdate'		=> $birthdate,
+								'faculty'		=> $faculty,
+								'department'	=> $department,
+								'class'			=> $class,
+								'id'			=> $id
+
+
+							);
+
+		$query = $this->db->where('id',$id)->update('student',$update_data);
+
+		$affected_rows = $this->db->affected_rows();
+
+		if ($affected_rows > 0)
+		{
+			return TRUE;
+		}
+		else
+		{
+			return FALSE;
+		}
 	}
 
 

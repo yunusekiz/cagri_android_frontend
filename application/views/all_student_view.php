@@ -107,20 +107,22 @@
           <th>First Name</th>
           <th>Last Name</th>
           <th>Department</th>
+          <th>Class</th>
           <th style="width: 36px;"></th>
         </tr>
       </thead>
       <tbody>
         {allins}
         <tr>
-          <td>{inumber}</td>
+          <td>{snumber}</td>
           <td>{name}</td>
           <td>{surname}</td>
           <td>{department}</td>
+          <td>{class}</td>
           <td>
               <a href="editForm/{id}"><i class="icon-pencil"></i></a>
               <!-- <a href="#myModal" role="button" data-toggle="modal"><i class="icon-remove"></i></a> -->
-              <a href="deleteInstructor/{id}"><i class="icon-remove"></i></a>
+              <a href="deleteStudent/{id}"><i class="icon-remove"></i></a>
           </td>
         </tr>
          {/allins}
