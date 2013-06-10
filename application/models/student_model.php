@@ -2,7 +2,7 @@
 
 class student_model extends CI_Model {
 
-	public function addStudentRow($snumber,$name,$surname,$email,$birthdate,$faculty,$department, $class)
+	public function addStudentRow($snumber,$name,$surname,$email,$birthdate,$password,$faculty,$department, $class)
 	{
 		$data = array(
 						'snumber'		=>$snumber,
@@ -10,6 +10,7 @@ class student_model extends CI_Model {
 						'surname'		=>	$surname,
 						'email'			=> $email,
 						'birthdate'		=>	$birthdate,
+						'password'		=> $password,
 						'faculty' 		=> $faculty,
 						'department'	=>	$department,
 						'class' 		=> $class
@@ -82,13 +83,14 @@ class student_model extends CI_Model {
 
 	}
 
-	public function updateStudent($snumber,$name,$surname,$email,$birthdate,$faculty,$department,$class,$id) {
+	public function updateStudent($snumber,$name,$surname,$email,$birthdate,$password,$faculty,$department,$class,$id) {
 			$update_data = array(
 								'snumber'		=> $snumber,
 								'name'			=> $name,
 								'surname'		=> $surname,
 								'email'			=> $email,
 								'birthdate'		=> $birthdate,
+								'password'		=> $password,
 								'faculty'		=> $faculty,
 								'department'	=> $department,
 								'class'			=> $class,

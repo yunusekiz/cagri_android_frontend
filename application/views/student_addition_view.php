@@ -45,13 +45,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Android Alert System</a>
+            <a class="brand" href="../home">Android Alert System</a>
       
             <div class="nav-collapse collapse">
               <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alerts <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-envelope"></i> Compose New Alert</a></li>
+                            <li><a href="../alert/addform"><i class="icon-envelope"></i> Compose New Alert</a></li>
                             
                             
                         </ul>
@@ -72,10 +72,7 @@
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Admin <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-cog"></i> Preferences</a></li>
-                            <li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/auth/logout"><i class="icon-off"></i> Logout</a></li>
+                            <li><a href="../home/logout"><i class="icon-off"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -127,12 +124,19 @@
           </div>
         </div>
       </div>
-
+           <label class="control-label" for="inputIcon">Birth Day</label>
           <div class="control-group"> 
            <div class="input-append date" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
               <input class="span2" size="16" type="text" value="12-02-2012" name="student_birthdate">
               <span class="add-on"><i class="icon-calendar"></i></span>
             </div>
+
+         <div class="control-group"> 
+           <div class="controls">  
+              <label class="control-label" for="textarea">Password</label>
+              <input type="text" required="true" class="input-xlarge" id="input01" name="student_password">
+           </div>  
+      </div>
 
     <div class="control-group">
      

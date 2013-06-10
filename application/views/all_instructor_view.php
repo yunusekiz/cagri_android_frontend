@@ -43,13 +43,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Android Alert System</a>
+            <a class="brand" href="../home">Android Alert System</a>
       
             <div class="nav-collapse collapse">
               <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alerts <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-envelope"></i> Compose New Alert</a></li>
+                            <li><a href="../alert/addform"><i class="icon-envelope"></i> Compose New Alert</a></li>
                             
                             
                         </ul>
@@ -70,10 +70,8 @@
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Admin <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-cog"></i> Preferences</a></li>
-                            <li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/auth/logout"><i class="icon-off"></i> Logout</a></li>
+                           <li><a href="../home/logout"><i class="icon-off"></i> Logout</a></li>
+                           
                         </ul>
                     </li>
                 </ul>
@@ -123,16 +121,7 @@
       </tbody>
     </tabqle>
 </div>
-<div class="pagination">
-    <ul>
-        <li><a href="#">Prev</a></li>
-        <li><a href="#">1</a></li>
-        <li><a href="#">2</a></li>
-        <li><a href="#">3</a></li>
-        <li><a href="#">4</a></li>
-        <li><a href="#">Next</a></li>
-    </ul>
-</div>
+
 <div class="modal small hide fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>

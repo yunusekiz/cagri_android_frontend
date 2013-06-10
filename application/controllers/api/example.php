@@ -18,6 +18,35 @@ require APPPATH.'/libraries/REST_Controller.php';
 
 class Example extends REST_Controller
 {
+
+    function event_get()
+    {
+        $this->load->model('event_model');
+
+        $data = $this->event_model->getLastEvent();
+
+        $this->response($data, 200);
+
+    }
+
+    function msg_post()
+    {
+        $sender_id         = $this->post('sender_id');
+        $receiver_id       = $this->post('receiver_id');
+        $message_content   = $this->post('message_content');
+
+        $this->load->model('message_model');
+
+        $insert_new_message = $this->message_model->insertNewMessage($sender_id, $receiver_id, $message_content);
+
+        if ($insert_new_message == TRUE) 
+        {
+            $message = 'success';
+            $this->response($message, 200);     // 200 being the HTTP response code
+        }
+
+    }
+
 	function user_get()
     {
         if(!$this->get('id'))
@@ -30,6 +59,7 @@ class Example extends REST_Controller
 			1 => array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com', 'fact' => 'Loves swimming'),
 			2 => array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com', 'fact' => 'Has a huge face'),
 			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => 'Is a Scott!', array('hobbies' => array('fartings', 'bikes'))),
+
 		);
 		
     	$user = @$users[$this->get('id')];
@@ -44,13 +74,50 @@ class Example extends REST_Controller
             $this->response(array('error' => 'User could not be found'), 404);
         }
     }
+
+
+    function users_get()
+    {
+        //$users = $this->some_model->getSomething( $this->get('limit') );
+        $users = array(
+            array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com'),
+            array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com'),
+            3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => array('hobbies' => array('fartings', 'bikes'))),
+        );
+        
+        if($users)
+        {
+            var_dump($this->response($users)); 
+            //$this->response($users, 200); // 200 being the HTTP response code
+        }
+
+        else
+        {
+            $this->response(array('error' => 'Couldn\'t find any users!'), 404);
+        }
+    }
+
+
     
     function user_post()
     {
         //$this->some_model->updateUser( $this->get('id') );
-        $message = array('id' => $this->get('id'), 'name' => $this->post('name'), 'email' => $this->post('email'), 'message' => 'ADDED!');
+        //$message = array('id' => $this->get('id'), 'name' => $this->post('name'), 'email' => $this->post('email'), 'message' => 'ADDED!');
+        $this->load->model('user_model');
         
-        $this->response($message, 200); // 200 being the HTTP response code
+        $user_name          = $this->post('user_name');
+        $user_email         = $this->post('user_email');
+
+        //$this->user_model->insertNewMessage($sender_id, $receiver_id, $message_content);
+        $add_user = $this->user_model->insertNewUser($user_name, $user_email);
+
+        if ($add_user == TRUE) 
+        {
+            $message = 'success';
+            $this->response($message, 200); // 200 being the HTTP response code
+        }
+
+        
     }
     
     function user_delete()
@@ -61,25 +128,7 @@ class Example extends REST_Controller
         $this->response($message, 200); // 200 being the HTTP response code
     }
     
-    function users_get()
-    {
-        //$users = $this->some_model->getSomething( $this->get('limit') );
-        $users = array(
-			array('id' => 1, 'name' => 'Some Guy', 'email' => 'example1@example.com'),
-			array('id' => 2, 'name' => 'Person Face', 'email' => 'example2@example.com'),
-			3 => array('id' => 3, 'name' => 'Scotty', 'email' => 'example3@example.com', 'fact' => array('hobbies' => array('fartings', 'bikes'))),
-		);
-        
-        if($users)
-        {
-            $this->response($users, 200); // 200 being the HTTP response code
-        }
 
-        else
-        {
-            $this->response(array('error' => 'Couldn\'t find any users!'), 404);
-        }
-    }
 
 
 	public function send_post()

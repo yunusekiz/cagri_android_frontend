@@ -56,12 +56,13 @@ class instructor extends CI_Controller {
 		$instructor_surname		= $this->input->post('instructor_surname');
 		$instructor_email		= $this->input->post('instructor_email');
 		$instructor_birthdate	= $this->input->post('instructor_birthdate');
+		$instructor_password	= $this->input->post('instructor_password');
 		$instructor_faculty		= $this->input->post('instructor_faculty');
 		$instructor_department	= $this->input->post('instructor_department');
 
 
 		if ( ($instructor_number=="")	  || ($instructor_name=="")	|| ($instructor_surname=="")	 || ($instructor_email=="") ||
-			 ($instructor_birthdate=="") || ($instructor_faculty=="") || ($instructor_department==""))
+			 ($instructor_birthdate=="") || ($instructor_password=="") || ($instructor_faculty=="") || ($instructor_department==""))
 		   {
 		   		$message = 'Please do not left any spaces';
 		   		echo $message;
@@ -71,7 +72,7 @@ class instructor extends CI_Controller {
 		   {
 
 		   	$insert = $this->instructor_model->addInstructorRow($instructor_number, $instructor_name,
-		   	$instructor_surname,$instructor_email,$instructor_birthdate,$instructor_faculty,
+		   	$instructor_surname,$instructor_email,$instructor_birthdate,$instructor_password,$instructor_faculty,
 		   						$instructor_department);
 
 	
@@ -119,11 +120,12 @@ class instructor extends CI_Controller {
 		$instructor_surname		= $this->input->post('instructor_surname');
 		$instructor_email		= $this->input->post('instructor_email');
 		$instructor_birthdate	= $this->input->post('instructor_birthdate');
+		$instructor_password	= $this->input->post('instructor_password');
 		$instructor_faculty		= $this->input->post('instructor_faculty');
 		$instructor_department	= $this->input->post('instructor_department');
 
 		$update = $this->instructor_model->updateInstructor($instructor_number,$instructor_name,$instructor_surname,$instructor_email,
-			$instructor_birthdate,$instructor_faculty,$instructor_department,$instructor_id);
+			$instructor_birthdate,$instructor_password,$instructor_faculty,$instructor_department,$instructor_id);
 
 		if($update == TRUE) {
 			echo 'Succesfully updated';

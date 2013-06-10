@@ -2,7 +2,7 @@
 
 class instructor_model extends CI_Model {
 
-	public function addInstructorRow($inumber,$name,$surname,$email,$birthdate,$faculty,$department)
+	public function addInstructorRow($inumber,$name,$surname,$email,$birthdate,$password,$faculty,$department)
 	{
 		$data = array(
 						'inumber'		=>$inumber,
@@ -10,6 +10,7 @@ class instructor_model extends CI_Model {
 						'surname'		=>	$surname,
 						'email' 		=> $email,
 						'birthdate'		=>	$birthdate,
+						'password'		=>	$password,
 						'faculty'		=> $faculty,
 						'department'	=>	$department						
 					);
@@ -74,13 +75,14 @@ class instructor_model extends CI_Model {
 
 	}
 
-	public function updateInstructor($inumber,$name,$surname,$email,$birthdate,$faculty,$department,$id) {
+	public function updateInstructor($inumber,$name,$surname,$email,$birthdate,$password,$faculty,$department,$id) {
 			$update_data = array(
 								'inumber'		=> $inumber,
 								'name'			=> $name,
 								'surname'		=> $surname,
 								'email'			=> $email,
 								'birthdate'		=> $birthdate,
+								'password'		=> $password,
 								'faculty'		=> $faculty,
 								'department'	=> $department,
 								'id'			=> $id

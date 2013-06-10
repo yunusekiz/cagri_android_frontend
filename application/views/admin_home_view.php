@@ -20,13 +20,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="../backend/home">Android Alert System</a>
+            <a class="brand" href="">Android Alert System</a>
       
             <div class="nav-collapse collapse">
               <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alerts <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-envelope"></i> Compose New Alert</a></li>
+                            <li><a href="alert/addform"><i class="icon-envelope"></i> Compose New Alert</a></li>
                             
                             
                         </ul>
@@ -47,8 +47,10 @@
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Admin <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                           
-                            <li><a href="home/logout"><i class="icon-off"></i> Logout</a></li>
+                            <li><a href="/user/preferences"><i class="icon-cog"></i> Preferences</a></li>
+                            <li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>
+                            <li class="divider"></li>
+                            <li><a href="/auth/logout"><i class="icon-off"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -149,8 +151,8 @@
  
 });
 </script>
+<!--
 
-<!-- 
     <div class="container">
       <div class="row">
         <div class="well">

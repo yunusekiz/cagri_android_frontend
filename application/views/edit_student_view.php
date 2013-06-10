@@ -43,13 +43,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="#">Android Alert System</a>
+            <a class="brand" href="../home">Android Alert System</a>
       
             <div class="nav-collapse collapse">
               <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alerts <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-envelope"></i> Compose New Alert</a></li>
+                            <li><a href="alert/addform"><i class="icon-envelope"></i> Compose New Alert</a></li>
                             
                             
                         </ul>
@@ -60,7 +60,7 @@
                         <ul class="dropdown-menu">
                             <li><a href="student"><i class="icon-plus"></i> Add Student</a></li>
                             <li><a href="instructor/addForm"><i class="icon-plus"></i> Add Instructor</a></li>
-                            <li><a href="/help/support"><i class="icon-edit"></i> Edit Student</a></li>
+                            <li><a href="student/allStudent"><i class="icon-edit"></i> Edit Student</a></li>
                             <li><a href="instructor/allInstructors"><i class="icon-edit"></i> Edit Instructor</a></li>
 
                         </ul>
@@ -70,10 +70,7 @@
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Admin <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-cog"></i> Preferences</a></li>
-                            <li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>
-                            <li class="divider"></li>
-                            <li><a href="/auth/logout"><i class="icon-off"></i> Logout</a></li>
+                            <li><a href="../home/logout"><i class="icon-off"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>
@@ -93,7 +90,11 @@
       
 
 
-
+<div class="btn-toolbar">
+    <button class="btn btn-primary">New User</button>
+    <button class="btn">Import</button>
+    <button class="btn">Export</button>
+</div>
 <div class="well">
     <table class="table">
       <thead>
@@ -196,7 +197,7 @@
  
 
 
-    
+    <script src="{base}assets/js/bootstrap.js" type="text/javascript"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
     <script src="{base}assets/js/bootstrap-typeahead.min.js" type="text/javascript"></script>
     <script src="{base}assets/js/bootstrap-combobox.js" type="text/javascript"></script>

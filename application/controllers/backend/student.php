@@ -53,13 +53,14 @@ class student extends CI_Controller {
 		$student_surname	= $this->input->post('student_surname');
 		$student_email		= $this->input->post('student_email');
 		$student_birthdate	= $this->input->post('student_birthdate');
+		$student_password	= $this->input->post('student_password');
 		$student_faculty	= $this->input->post('student_faculty');
 		$student_department	= $this->input->post('student_department');
 		$student_class		= $this->input->post('student_class');
-
+		
 
 		if ( ($student_number=="")	  || ($student_name=="")	|| ($student_surname=="")	 || ($student_email=="") ||
-			 ($student_birthdate=="") || ($student_faculty=="") || ($student_department=="") || ($student_class=="") )
+			 ($student_birthdate=="")|| ($student_password=="") || ($student_faculty=="") || ($student_department=="") || ($student_class=="")  )
 		   {
 		   		echo "Please do not left any spaces";
 		   }
@@ -68,7 +69,7 @@ class student extends CI_Controller {
 
 		   					
 		   $insert = $this->student_model->addStudentRow($student_number, $student_name,
-		   	$student_surname,$student_email,$student_birthdate,$student_faculty,
+		   	$student_surname,$student_email,$student_birthdate,$student_password,$student_faculty,
 		   						$student_department,$student_class);
 
 	
@@ -128,12 +129,14 @@ class student extends CI_Controller {
 		$student_surname	= $this->input->post('student_surname');
 		$student_email		= $this->input->post('student_email');
 		$student_birthdate	= $this->input->post('student_birthdate');
+		$student_password	= $this->input->post('student_password');
 		$student_faculty	= $this->input->post('student_faculty');
 		$student_department	= $this->input->post('student_department');
 		$student_class		= $this->input->post('student_class');
+		
 
 		if ( ($student_number=="")	  || ($student_name=="")	|| ($student_surname=="")	 || ($student_email=="") ||
-			 ($student_birthdate=="") || ($student_faculty=="") || ($student_department=="") || ($student_class=="") )
+			 ($student_birthdate=="") || ($student_password=="")|| ($student_faculty=="") || ($student_department=="") || ($student_class=="")  )
 		   {
 		   		echo "Please do not left any spaces";
 		   		echo "<meta http-equiv=\"refresh\" content=\"0; url=../student/addForm\">";
@@ -144,7 +147,7 @@ class student extends CI_Controller {
 
 		   					
 		   $update = $this->student_model->updateStudent($student_number, $student_name,
-		   	$student_surname,$student_email,$student_birthdate,$student_faculty,
+		   	$student_surname,$student_email,$student_birthdate,$student_password,$student_faculty,
 		   						$student_department,$student_class,$student_id);
 
 
@@ -210,6 +213,24 @@ class student extends CI_Controller {
 
 		$this->parser->parse('all_student_view',$this->data);
 
+	}
+
+	public function getExcelDoc() {
+	$this->load->library('excel');
+	$this->excel->setActiveSheetIndex(0);
+	$this->excel->getActiveSheet()->setTitle('test worksheet');
+	$this->excel->getActiveSheet()->setCellValue('A1', 'This is just some text value');
+	$this->excel->getActiveSheet()->getStyle('A1')->getFont()->setSize(20);
+	$this->excel->getActiveSheet()->getStyle('A1')->getFont()->setBold(true);
+	$this->excel->getActiveSheet()->mergeCells('A1:D1');
+	$this->excel->getActiveSheet()->getStyle('A1')->getAlignment()->setHorizontal(PHPExcel_Style_Alignment::HORIZONTAL_CENTER);
+	 
+	$filename='just_some_random_name.xls'; 
+	header('Content-Type: application/vnd.ms-excel');
+	header('Content-Disposition: attachment;filename="'.$filename.'"'); 
+	header('Cache-Control: max-age=0'); 
+	$objWriter = PHPExcel_IOFactory::createWriter($this->excel, 'Excel5');  
+	$objWriter->save('php://output');
 	}
 
 }

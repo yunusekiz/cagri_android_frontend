@@ -72,7 +72,6 @@
         <input type="text" class="input-block-level" placeholder="Email address" required="required" name="email">
         <input type="password" class="input-block-level" placeholder="Password" required="required" name="pass">
         <button class="btn btn-large btn-primary" type="submit">Sign in</button>
-        <a href="">Forgot Password?</a>
       </form>
 
     </div> <!-- /container -->
