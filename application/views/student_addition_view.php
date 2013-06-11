@@ -3,7 +3,13 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Student Addition</title>
-<link href="{base}assets/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
+
+
+      <link href="{base}assets/css/bootstrap.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/bootstrap-responsive.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/main.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+
 <link href="{base}assets/css/bootstrap-combobox.css" media="screen" rel="stylesheet" type="text/css">
 <link href="{base}assets/css/datepicker.css" rel="stylesheet" type="text/css">
 
@@ -37,6 +43,7 @@
     </style>
 
 <body>
+   <img alt="full screen background image" src="{base}assets/images/background_6.jpg" id="full-screen-background-image" />   
   <div class="navbar navbar-inverse nav">
     <div class="navbar-inner">
         <div class="container">
@@ -45,13 +52,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href="../home">Android Alert System</a>
+            <a class="brand" href="{base}/backend/home">Android Alert System</a>
       
             <div class="nav-collapse collapse">
               <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alerts <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../alert/addform"><i class="icon-envelope"></i> Compose New Alert</a></li>
+                            <li><a href="{base}backend/alert/addform"><i class="icon-envelope"></i> Compose New Alert</a></li>
                             
                             
                         </ul>
@@ -60,10 +67,10 @@
                             <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../student/addForm"><i class="icon-plus"></i> Add Student</a></li>
-                            <li><a href="../instructor/addForm"><i class="icon-plus"></i> Add Instructor</a></li>
-                            <li><a href="../student/allStudents"><i class="icon-edit"></i> Edit Student</a></li>
-                            <li><a href="../instructor/allInstructors"><i class="icon-edit"></i> Edit Instructor</a></li>
+                            <li><a href="{base}backend/student/addForm"><i class="icon-plus"></i> Add Student</a></li>
+                            <li><a href="{base}backend/instructor/addForm"><i class="icon-plus"></i> Add Instructor</a></li>
+                            <li><a href="{base}backend/student/allStudents"><i class="icon-edit"></i> Edit Student</a></li>
+                            <li><a href="{base}backend/instructor/allInstructors"><i class="icon-edit"></i> Edit Instructor</a></li>
 
                         </ul>
                     </li>
@@ -72,7 +79,10 @@
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Admin <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="../home/logout"><i class="icon-off"></i> Logout</a></li>
+                            <li><a href="{base}backend/user/preferences"><i class="icon-cog"></i> Preferences</a></li>
+                            <li><a href="{base}backend/support"><i class="icon-envelope"></i> Contact Support</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{base}backend/home/logout"><i class="icon-off"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>

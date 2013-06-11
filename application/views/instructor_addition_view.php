@@ -3,7 +3,12 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Instructor Addition</title>
-<link href="{base}assets/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
+
+      <link href="{base}assets/css/bootstrap.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/bootstrap-responsive.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/main.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+
 <link href="{base}assets/css/bootstrap-combobox.css" media="screen" rel="stylesheet" type="text/css">
 <link href="{base}assets/css/datepicker.css" rel="stylesheet" type="text/css">
 
@@ -37,6 +42,8 @@
     </style>
 
 <body>
+   <img alt="full screen background image" src="{base}assets/images/background_6.jpg" id="full-screen-background-image" /> 
+
   <div class="navbar navbar-inverse nav">
     <div class="navbar-inner">
         <div class="container">

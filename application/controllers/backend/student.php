@@ -4,6 +4,7 @@ class student extends CI_Controller {
 
 	protected $session_data_array; // başlatılan session ın değerlerini array tipinde alan değişken.
 	protected $data;
+	protected $parser_data;
 
 	public function __construct() {
 		parent::__construct();
@@ -11,8 +12,7 @@ class student extends CI_Controller {
 
 		$base = base_url();
 		$this->data['base'] = $base;
-
-		
+		$this->parser_data['base'] = $base;
 		
 	}
 	
@@ -100,7 +100,7 @@ class student extends CI_Controller {
 
 	public function update() 
 	{
-				$base = base_url();
+		$base = base_url();
 		$this->parser_data = array('base' => $base);
 		
 		$this->load->library('session');// session ın nimetlerinden faydalanabilmek için 'session' isimli library yi yükler.
@@ -195,8 +195,9 @@ class student extends CI_Controller {
 			//var_dump($this->session_data_array); //
 			
 			// admin panelinin ilgili view lerini yükler
+			//$this->parser->parse('admin_header_view',$this->parser_data);
 			$this->parser->parse('student_addition_view',$this->data);
-
+			//$this->parser->parse('admin_footer_view',$this->parser_data);
 		}		
 	}
 

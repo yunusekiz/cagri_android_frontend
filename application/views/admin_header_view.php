@@ -112,7 +112,7 @@
               <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Alerts <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="alert/addform"><i class="icon-envelope"></i> Compose New Alert</a></li>
+                            <li><a href="{base}backend/alert/addform"><i class="icon-envelope"></i> Compose New Alert</a></li>
                             
                             
                         </ul>
@@ -121,10 +121,10 @@
                             <ul class="nav">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Users <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="student/addForm"><i class="icon-plus"></i> Add Student</a></li>
-                            <li><a href="instructor/addForm"><i class="icon-plus"></i> Add Instructor</a></li>
-                            <li><a href="student/allStudents"><i class="icon-edit"></i> Edit Student</a></li>
-                            <li><a href="instructor/allInstructors"><i class="icon-edit"></i> Edit Instructor</a></li>
+                            <li><a href="{base}backend/student/addForm"><i class="icon-plus"></i> Add Student</a></li>
+                            <li><a href="{base}backend/instructor/addForm"><i class="icon-plus"></i> Add Instructor</a></li>
+                            <li><a href="{base}backend/student/allStudents"><i class="icon-edit"></i> Edit Student</a></li>
+                            <li><a href="{base}backend/instructor/allInstructors"><i class="icon-edit"></i> Edit Instructor</a></li>
 
                         </ul>
                     </li>
@@ -133,10 +133,10 @@
                 <ul class="nav pull-right">
                     <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">Welcome, Admin <b class="caret"></b></a>
                         <ul class="dropdown-menu">
-                            <li><a href="/user/preferences"><i class="icon-cog"></i> Preferences</a></li>
-                            <li><a href="/help/support"><i class="icon-envelope"></i> Contact Support</a></li>
+                            <li><a href="{base}backend/user/preferences"><i class="icon-cog"></i> Preferences</a></li>
+                            <li><a href="{base}backend/support"><i class="icon-envelope"></i> Contact Support</a></li>
                             <li class="divider"></li>
-                            <li><a href="/auth/logout"><i class="icon-off"></i> Logout</a></li>
+                            <li><a href="{base}backend/home/logout"><i class="icon-off"></i> Logout</a></li>
                         </ul>
                     </li>
                 </ul>

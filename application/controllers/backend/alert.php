@@ -3,40 +3,35 @@
 class alert extends CI_Controller {
 
 	protected $session_data_array; // başlatılan session ın değerlerini array tipinde alan değişken.
-	protected $data;
+	protected $parser_data;
 
 	public function __construct()
 	{
 		parent::__construct();
-		$this->load->model('alert_model');
-		$this->load->model('event_model');
+		
+		$this->load->library('session');// session ın nimetlerinden faydalanabilmek için 'session' isimli library yi yükler.
+		$admin = $this->session->userdata('admin_session'); // $admin diye bi değişken set edilir, değer olarak ise
+		
+		if( empty($admin) ) // eğer $admin değişkenini değeri boş ise, kullanıcı login formuna geri gönderilir
+		{
+			$base = base_url();
+			echo "<meta http-equiv=\"refresh\" content=\"0; url=$base"."loginpage\">";
+			die();
+		}
 
 		$base = base_url();
-		$this->data['base'] = $base;
+		$this->parser_data['base'] = $base;
+		$this->parser_data['title'] = 'Create New Event';
 
+		$this->load->model('alert_model');
+		$this->load->model('event_model');
 	}
 
 
 	public function index()
 	{
-		$this->load->library('session');// session ın nimetlerinden faydalanabilmek için 'session' isimli library yi yükler.
-		$admin = $this->session->userdata('admin_session'); // $admin diye bi değişken set edilir, değer olarak ise
-															// şu aşamada olup olmadığı bilinmeyen admin_session değişkeni atanır
-		if( empty($admin) ) // eğer $admin değişkenini değeri boş ise, kullanıcı login formuna geri gönderilir
-		{
-			echo "<meta http-equiv=\"refresh\" content=\"0; url=../loginpage\">";
-		}
-		else
-		{
-			//$this->getSessionData(); // session başlatıldığı andaki değerleri öğrenilmek istendiği zaman getSessionData() metodu çağırılır.
-			//var_dump($this->session_data_array); //
-
-			// admin panelinin ilgili view lerini yükler
-
-		}
-
+		return null;
 	}
-
 
 
 	protected function getSessionData() // session ın başlatıldığı andaki değerleri bu metodla öğrenilebilir.
@@ -47,9 +42,7 @@ class alert extends CI_Controller {
 
 
 	public function addNewAlert()
-
 	{
-
 
 		$alert_faculty		= $this->input->post('alert_faculty');
 		$alert_department	= $this->input->post('alert_department');
@@ -59,7 +52,6 @@ class alert extends CI_Controller {
 		$alert_date 		= $this->input->post('alert_date');
 
 
-
 		if ( ($alert_faculty=="")	||($alert_department=="")||($alert_clas=="")||($alert_type=="")|| ($alert_body==""))
 		{
 		 	echo "Please do not left any spaces";
@@ -67,10 +59,7 @@ class alert extends CI_Controller {
 		}
 		else
 		{
-
-
 		   $insert = $this->event_model->addAlertRow($alert_faculty, $alert_department, $alert_clas, $alert_type, $alert_body, $alert_date);
-
 
 		   					if($insert == true){
 		   						$message = 'Operation success';
@@ -87,20 +76,8 @@ class alert extends CI_Controller {
 	}
 
 
-
-	public function getLastEvent() {
-		$data = $this->event_model->getLastEvent();
-
-
-
-	}
-
-
-
 	public function addForm()
-		{
-		$base = base_url();
-		$this->parser_data = array('base' => $base);
+	{
 
 		$this->load->library('session');// session ın nimetlerinden faydalanabilmek için 'session' isimli library yi yükler.
 		$admin = $this->session->userdata('admin_session'); // $admin diye bi değişken set edilir, değer olarak ise
@@ -123,6 +100,5 @@ class alert extends CI_Controller {
 			$this->parser->parse('admin_footer_view',$this->parser_data);
 			}
 		}
-
 
 }

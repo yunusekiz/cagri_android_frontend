@@ -3,10 +3,28 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Edit User</title>
-<link href="{base}assets/css/bootstrap.css" media="screen" rel="stylesheet" type="text/css">
+
+      <link href="{base}assets/css/bootstrap.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/bootstrap-responsive.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/main.css" type="text/css" rel="stylesheet">
+      <link href="{base}assets/css/jquery-ui-1.10.0.custom.css" rel="stylesheet">
+
 <link href="{base}assets/css/bootstrap-combobox.css" media="screen" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="{base}assets/css/checkbox_style.css" />
+
+
+    <script src="{base}assets/js/jquery.js"></script>
+    <script src="{base}assets/js/bootstrap.js"></script>
+    <script src="{base}assets/js/jquery-ui-1.10.0.custom.js"></script>  
+
+    <script src="{base}assets/js/bootstrap-typeahead.min.js" type="text/javascript"></script>
+    <script src="{base}assets/js/bootstrap-combobox.js" type="text/javascript"></script>
+    
+
+
 </head>
+
+
     <style type="text/css">
       .form-signin {
         max-width: 300px;
@@ -33,8 +51,11 @@
         padding: 7px 9px;
       }   
     </style>
-  
+
+
 <body>
+   <img alt="full screen background image" src="{base}assets/images/background_6.jpg" id="full-screen-background-image" /> 
+  
   <div class="navbar navbar-inverse nav">
     <div class="navbar-inner">
         <div class="container">
@@ -43,7 +64,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </a>
-            <a class="brand" href=../home>Android Alert System</a>
+            <a class="brand" href="../home">Android Alert System</a>
       
             <div class="nav-collapse collapse">
               <ul class="nav">
@@ -139,10 +160,6 @@
 
 
 
-    
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-    <script src="{base}assets/js/bootstrap.js" type="text/javascript"></script>
-    <script src="{base}assets/js/bootstrap-typeahead.min.js" type="text/javascript"></script>
-    <script src="{base}assets/js/bootstrap-combobox.js" type="text/javascript"></script>
+
 </body>
 </html>
